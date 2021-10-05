@@ -284,11 +284,13 @@ main .project .overlay {
   z-index: 1;
 }
 
-main .project:hover .overlay {
+main .project:hover .overlay,
+main .project:focus .overlay {
   opacity: 0.2;
 }
 
-main .project:hover .link-section {
+main .project:hover .link-section,
+main .project:focus .link-section {
   opacity: 1;
 }
 

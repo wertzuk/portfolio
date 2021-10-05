@@ -198,11 +198,13 @@ main {
       z-index: 1;
     }
 
-    &:hover .overlay {
+    &:hover .overlay,
+    &:focus .overlay {
       opacity: 0.2;
     }
 
-    &:hover .link-section {
+    &:hover .link-section,
+    &:focus .link-section {
       opacity: 1;
     }
   }
