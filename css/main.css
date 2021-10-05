@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Antonio:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 *,
 *::before,
 *::after {
@@ -62,9 +63,10 @@ html {
 }
 
 body {
-  font-family: "Anonymous Pro", monospace;
-  background: #0e0e0f;
+  font-family: "Open Sans", sans-serif;
+  background: #1d1d1d;
   color: white;
+  font-size: 14px;
 }
 
 h1 {
@@ -74,13 +76,17 @@ h1 {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 2rem 2rem 0;
+  padding: 1rem;
 }
 
 header .menu {
@@ -107,6 +113,7 @@ main section {
   position: relative;
   width: 100%;
   padding-bottom: 3rem;
+  max-width: 500px;
 }
 
 main section + section {
@@ -144,7 +151,7 @@ main .section-heading::after {
   left: -2.6rem;
   font-weight: 400;
   vertical-align: middle;
-  background: #0e0e0f;
+  background: #1d1d1d;
   height: calc(150% + 50px);
   z-index: 100;
   padding-bottom: 2rem;
@@ -161,5 +168,132 @@ main .btn {
   background: transparent;
   color: white;
   font-size: 18px;
+}
+
+main .skills-list {
+  margin: 3rem 0;
+}
+
+main .skills-list-item {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+main .skills-list .progress {
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+  background: #373737;
+  border-radius: 5px;
+  height: 2px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+main .skills-list .progress .bar {
+  height: 100%;
+}
+
+main .skills-list .progress .bar-1 {
+  width: 80%;
+  background: turquoise;
+}
+
+main .skills-list .progress .bar-2 {
+  width: 80%;
+  background: rebeccapurple;
+}
+
+main .skills-list .progress .bar-3 {
+  width: 60%;
+  background: red;
+}
+
+main .skills-list .progress .bar-4 {
+  width: 50%;
+  background: yellow;
+}
+
+main .skills-list .progress .bar-5 {
+  width: 20%;
+  background: #4343b4;
+}
+
+main .skills-list .progress .bar-6 {
+  width: 50%;
+  background: green;
+}
+
+main .project {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+
+main .project img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+main .project .link-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  margin: 0 auto;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  z-index: 10;
+}
+
+main .project .link-section .link {
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  background: #141a19;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  text-align: center;
+}
+
+main .project .overlay {
+  position: absolute;
+  inset: 0;
+  background: turquoise;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  z-index: 1;
+}
+
+main .project:hover .overlay {
+  opacity: 0.2;
+}
+
+main .project:hover .link-section {
+  opacity: 1;
+}
+
+.self-img {
+  max-width: 300px;
+  width: 90%;
 }
 /*# sourceMappingURL=main.css.map */
