@@ -127,6 +127,7 @@ header .menu {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  pointer-events: none;
 }
 
 header .active {
@@ -134,6 +135,7 @@ header .active {
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
+  pointer-events: all;
 }
 
 main {

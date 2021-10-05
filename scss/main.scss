@@ -60,11 +60,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    pointer-events: none;
   }
 
   .active {
     display: flex;
     opacity: 1;
+    pointer-events: all;
   }
 }
 
