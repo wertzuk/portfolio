@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <base target="_blank" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Document</title>
@@ -117,7 +118,7 @@
       <section id="projects">
         <div class="left">
           <h1 class="section-heading">Meine Projekte</h1>
-          <div class="project-container">
+          <div class="project-container" id="app">
             <h3 class="sub-heading">Frontend Mentor Projekte</h3>
             <p class="text">
               Die Plattform frontendmentor.io bietet exzellente Möglichkeiten,
@@ -127,182 +128,19 @@
               neues gelernt und es hat mir geholfen, meinen eigenen Style zu
               finden.
             </p>
+
             <div class="projects">
-              <div class="project">
-                <img src="images/project1.jpg" alt="" />
+              <div
+                class="project"
+                v-for="project in projectData"
+                :key="project.codeURL"
+              >
+                <img :src="project.img" alt="image" />
                 <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://quizzical-engelbart-80e3fb.netlify.app"
+                  <a class="link" target="_blank" :href="project.previewURL"
                     >Preview</a
                   >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/pricing-component-with-toggle-master"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project2.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://jovial-engelbart-34133d.netlify.app/#"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/project-tracking-intro-component-master"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project4.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://pedantic-kowalevski-adc239.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/social-media-dashboard-with-theme-switcher-master"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project3.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://festive-haibt-a6c222.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/loopstudios-landing-page-main"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project5.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://objective-golick-d0732d.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/interactive-pricing-component-main"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project6.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://boring-khorana-8d4dfd.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/blogr-landing-page-main"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project7.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://quirky-neumann-463e66.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/testimonials-grid-section-main"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project8.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://inspiring-bhabha-3239a0.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/fylo-data-storage-component-master"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project9.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://confident-chandrasekhar-ff1a9c.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/crowdfunding-product-page-main"
-                    >Source Code</a
-                  >
-                </div>
-                <div class="overlay"></div>
-              </div>
-              <div class="project">
-                <img src="images/project10.jpg" alt="" />
-                <div class="link-section">
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://awesome-archimedes-9e9e3d.netlify.app"
-                    >Preview</a
-                  >
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://github.com/wertzuk/Frontend-Mentor/tree/master/base-apparel-coming-soon-master"
+                  <a class="link" target="_blank" :href="project.codeURL"
                     >Source Code</a
                   >
                 </div>

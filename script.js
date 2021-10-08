@@ -48,3 +48,61 @@ const dataText = ["Hi.", "Ich bin Pascal", "Frontend-Entwickler.", "Motiviert"];
 //   }
 // }
 // StartTextAnimation(0);
+
+const projectData = [
+  {
+    img: "images/project2.jpg",
+    previewURL: "https://jovial-engelbart-34133d.netlify.app/#",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/project-tracking-intro-component-master",
+  },
+  {
+    img: "images/project4.jpg",
+    previewURL: "https://pedantic-kowalevski-adc239.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/social-media-dashboard-with-theme-switcher-master",
+  },
+  {
+    img: "images/project3.jpg",
+    previewURL: "https://festive-haibt-a6c222.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/loopstudios-landing-page-main",
+  },
+  {
+    img: "images/project5.jpg",
+    previewURL: "https://objective-golick-d0732d.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/interactive-pricing-component-main",
+  },
+  {
+    img: "images/project6.jpg",
+    previewURL: "https://boring-khorana-8d4dfd.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/blogr-landing-page-main",
+  },
+  {
+    img: "images/project7.jpg",
+    previewURL: "https://quirky-neumann-463e66.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/testimonials-grid-section-main",
+  },
+  {
+    img: "images/project8.jpg",
+    previewURL: "https://inspiring-bhabha-3239a0.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/fylo-data-storage-component-master",
+  },
+  {
+    img: "images/project9.jpg",
+    previewURL: "https://confident-chandrasekhar-ff1a9c.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/crowdfunding-product-page-main",
+  },
+];
+
+const app = new Vue({
+  el: "#app",
+  data: {
+    message: "Hello Vue!",
+  },
+});
