@@ -213,8 +213,11 @@ main {
       }
     }
   }
-  #projects {
+  #project-section {
     display: block;
+    .sub-heading {
+      margin-top: 1rem;
+    }
   }
 
   .projects {
@@ -236,6 +239,10 @@ main {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      transition: transform 0.2s ease-in;
+    }
+    &:hover img {
+      transform: scale(1.05);
     }
 
     .link-section {
@@ -247,9 +254,9 @@ main {
       width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 0 auto;
+      // justify-content: space-between;
+      // gap: 1rem;
+      // margin: 0 auto;
       transition: opacity 0.2s ease-in;
       z-index: 10;
 

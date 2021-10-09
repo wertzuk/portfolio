@@ -22,7 +22,7 @@
         <ul class="menu">
           <li><a href="#about">Über mich</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#project-section">Projekte</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -115,10 +115,13 @@
         <div class="right"></div>
         <!-- <button class="btn">Meine Projekte</button> -->
       </section>
-      <section id="projects">
+      <section id="project-section">
         <div class="left">
           <h1 class="section-heading">Meine Projekte</h1>
           <div class="project-container" id="app">
+            <h3 class="sub-heading">Eigene Projekte</h3>
+            <div class="projects"></div>
+
             <h3 class="sub-heading">Frontend Mentor Projekte</h3>
             <p class="text">
               Die Plattform frontendmentor.io bietet exzellente Möglichkeiten,
@@ -140,9 +143,9 @@
                   <a class="link" target="_blank" :href="project.previewURL"
                     >Preview</a
                   >
-                  <a class="link" target="_blank" :href="project.codeURL"
+                  <!-- <a class="link" target="_blank" :href="project.codeURL"
                     >Source Code</a
-                  >
+                  > -->
                 </div>
                 <div class="overlay"></div>
               </div>

@@ -7,7 +7,12 @@ hamburger.addEventListener("click", handleClasses);
 
 closeIcon.addEventListener("click", handleClasses);
 
-listItems.forEach((item) => item.addEventListener("click", handleClasses));
+const mq = window.matchMedia("(max-width: 850px)");
+if (mq.matches) {
+  // window width is at less than 570px
+
+  listItems.forEach((item) => item.addEventListener("click", handleClasses));
+}
 
 function handleClasses() {
   console.log();
