@@ -56,6 +56,12 @@ const dataText = ["Hi.", "Ich bin Pascal", "Frontend-Entwickler.", "Motiviert"];
 
 const projectData = [
   {
+    img: "images/project1.jpg",
+    previewURL: "https://quizzical-engelbart-80e3fb.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/pricing-component-with-toggle-master",
+  },
+  {
     img: "images/project2.jpg",
     previewURL: "https://jovial-engelbart-34133d.netlify.app/#",
     codeURL:
@@ -102,6 +108,24 @@ const projectData = [
     previewURL: "https://confident-chandrasekhar-ff1a9c.netlify.app",
     codeURL:
       "https://github.com/wertzuk/Frontend-Mentor/tree/master/crowdfunding-product-page-main",
+  },
+  {
+    img: "images/project10.jpg",
+    previewURL: "https://awesome-archimedes-9e9e3d.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/faq-accordion-card-main",
+  },
+  {
+    img: "images/project11.jpg",
+    previewURL: "https://faq-card-taupe.vercel.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/faq-accordion-card-main",
+  },
+  {
+    img: "images/project12.jpg",
+    previewURL: "https://elastic-archimedes-165593.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/faq-accordion-card-main",
   },
 ];
 
