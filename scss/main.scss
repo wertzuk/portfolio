@@ -102,12 +102,8 @@ main {
   }
   section {
     position: relative;
-    // display: flex;
     width: 100%;
     padding-bottom: 3rem;
-    // max-width: 500px;
-    & > * {
-    }
     .left {
       width: 100%;
       flex-basis: 60%;
@@ -254,9 +250,6 @@ main {
       width: 50%;
       display: flex;
       flex-direction: column;
-      // justify-content: space-between;
-      // gap: 1rem;
-      // margin: 0 auto;
       transition: opacity 0.2s ease-in;
       z-index: 10;
 
