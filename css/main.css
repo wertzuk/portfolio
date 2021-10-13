@@ -166,6 +166,7 @@ main {
   width: 70%;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 main::after {
@@ -341,47 +342,47 @@ main .project img {
      object-fit: cover;
   width: 100%;
   height: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
-main .project:hover img {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-main .project .link-section {
+main .project .link {
   position: absolute;
+  bottom: 0;
+  left: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+  font-weight: bolder;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
-  z-index: 10;
-}
-
-main .project .link-section .link {
-  cursor: pointer;
-  padding: 0.5em 1.5em;
-  background: #141a19;
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
   text-align: center;
   text-transform: uppercase;
   color: white;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+main .project .link:hover {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 main .project .overlay {
@@ -389,19 +390,30 @@ main .project .overlay {
   inset: 0;
   background: turquoise;
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
   z-index: 1;
+  pointer-events: none;
 }
 
-main .project:hover .overlay,
-main .project:active .overlay {
-  opacity: 0.2;
+main form {
+  margin-top: 2rem;
+  max-width: 400px;
 }
 
-main .project:hover .link-section,
-main .project:active .active-section {
-  opacity: 1;
+main form > * {
+  color: white;
+  font-family: inherit;
+  width: 100%;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  margin-top: 1rem;
+  padding: 0.6em;
+}
+
+main form > *:active, main form > *:focus {
+  border-color: turquoise;
 }
 
 .self-img {
@@ -444,6 +456,26 @@ main .project:active .active-section {
     gap: 1rem;
     -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  main .project .link {
+    opacity: 0;
+  }
+  main .project:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  main .project:hover .link {
+    opacity: 1;
+  }
+  main .project:hover .overlay,
+  main .project:focus .overlay,
+  main .project:active .overlay {
+    opacity: 0.2;
+  }
+  main .project:hover .link-section,
+  main .project:focus .link-section,
+  main .project:active .active-section {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */

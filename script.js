@@ -3,16 +3,14 @@ const closeIcon = document.querySelector(".close");
 const menu = document.querySelector(".menu");
 const listItems = document.querySelectorAll(".menu li");
 
-hamburger.addEventListener("click", handleClasses);
-
-closeIcon.addEventListener("click", handleClasses);
-
 const mq = window.matchMedia("(max-width: 850px)");
-if (mq.matches) {
-  // window width is at less than 570px
-
-  listItems.forEach((item) => item.addEventListener("click", handleClasses));
-}
+hamburger.addEventListener("click", handleClasses);
+closeIcon.addEventListener("click", handleClasses);
+listItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (mq.matches) handleClasses();
+  });
+});
 
 function handleClasses() {
   console.log();
@@ -27,32 +25,6 @@ function handleClasses() {
 // Animation
 //
 const dataText = ["Hi.", "Ich bin Pascal", "Frontend-Entwickler.", "Motiviert"];
-
-// function typeWriter(text, i, fnCallback) {
-//   if (i < text.length) {
-//     document.querySelector(".animated").innerHTML =
-//       text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-
-//     setTimeout(() => {
-//       typeWriter(text, i + 1, fnCallback);
-//     }, 100);
-//   } else if (typeof fnCallback == "function") {
-//     setTimeout(fnCallback, 700);
-//   }
-// }
-// function StartTextAnimation(i) {
-//   if (typeof dataText[i] == "undefined") {
-//     setTimeout(function () {
-//       StartTextAnimation(0);
-//     }, 20000);
-//   }
-//   if (i < dataText[i].length) {
-//     typeWriter(dataText[i], 0, function () {
-//       StartTextAnimation(i + 1);
-//     });
-//   }
-// }
-// StartTextAnimation(0);
 
 const projectData = [
   {
@@ -133,5 +105,16 @@ const app = new Vue({
   el: "#app",
   data: {
     message: "Hello Vue!",
+  },
+  methods: {
+    showPreviewButton(index) {
+      if (mq.matches) {
+        const link = this.$refs[index][0];
+        link.style.opacity = 1;
+        // this.$refs[index].$el.style.opacity = "1";
+        // $ref.style.opacity = 1;
+        // link.style.opacity = 1;
+      }
+    },
   },
 });

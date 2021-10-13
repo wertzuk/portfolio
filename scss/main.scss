@@ -91,6 +91,7 @@ main {
   width: 70%;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 4rem;
   &::after {
     content: "";
     position: absolute;
@@ -235,33 +236,34 @@ main {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      transition: transform 0.2s ease-in;
-    }
-    &:hover img {
-      transform: scale(1.05);
+      transition: transform 0.4s;
     }
 
-    .link-section {
+    .link {
       position: absolute;
+      bottom: 0;
+      left: 0;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      opacity: 0;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      transition: opacity 0.2s ease-in;
+      width: 100px;
+      height: 100px;
       z-index: 10;
-
-      .link {
-        cursor: pointer;
-        padding: 0.5em 1.5em;
-        background: rgb(20, 26, 25);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-        width: 100%;
-        text-align: center;
-        text-transform: uppercase;
-        color: white;
+      font-weight: bolder;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(black, 0.7);
+      border-radius: 50%;
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      transition: all 0.2s ease-in;
+      opacity: 0.9;
+      cursor: pointer;
+      &:hover {
+        pointer-events: all;
+        background: rgba(black, 0.9);
       }
     }
 
@@ -270,18 +272,27 @@ main {
       inset: 0;
       background: turquoise;
       opacity: 0;
-      transition: opacity 0.2s ease-in;
+      transition: opacity 0.4s;
       z-index: 1;
+      pointer-events: none;
     }
-
-    &:hover .overlay,
-    &:active .overlay {
-      opacity: 0.2;
-    }
-
-    &:hover .link-section,
-    &:active .active-section {
-      opacity: 1;
+  }
+  form {
+    margin-top: 2rem;
+    max-width: 400px;
+    & > * {
+      color: white;
+      font-family: inherit;
+      width: 100%;
+      background: transparent;
+      border: 2px solid white;
+      outline: none;
+      margin-top: 1rem;
+      padding: 0.6em;
+      &:active,
+      &:focus {
+        border-color: turquoise;
+      }
     }
   }
 }
@@ -298,8 +309,6 @@ main {
       top: 50%;
       transform: translateY(-50%);
       left: 2rem;
-      // width: 10%;
-      // background: red;
     }
     .hamburger {
       display: none;
@@ -323,6 +332,30 @@ main {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project {
+      .link {
+        opacity: 0;
+      }
+      &:hover img {
+        transform: scale(1.1);
+      }
+
+      &:hover .link {
+        opacity: 1;
+      }
+
+      &:hover .overlay,
+      &:focus .overlay,
+      &:active .overlay {
+        opacity: 0.2;
+      }
+
+      &:hover .link-section,
+      &:focus .link-section,
+      &:active .active-section {
+        opacity: 1;
+      }
     }
   }
 }
