@@ -159,7 +159,12 @@ main {
     border: 1px solid white;
     background: transparent;
     color: white;
+    padding: 0.5em 1.5em;
     font-size: 18px;
+    font-weight: lighter;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
     &:hover {
       color: #1d1d1d;
       background: rgb(207, 232, 241);
