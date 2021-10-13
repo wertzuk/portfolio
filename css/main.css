@@ -139,7 +139,7 @@ header .menu {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  z-index: 10;
+  z-index: 50;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -428,7 +428,7 @@ main form > *:active, main form > *:focus {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 2rem;
+    left: 3rem;
   }
   header .hamburger {
     display: none;
@@ -438,12 +438,15 @@ main form > *:active, main form > *:focus {
     text-decoration: none;
     list-style-type: none;
   }
+  header .menu li {
+    margin-bottom: 3rem;
+  }
   header .menu a {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 700;
   }
   main {
-    margin-left: 12rem;
+    margin-left: 15rem;
   }
   main section {
     display: -webkit-box;
