@@ -128,8 +128,8 @@ header .hamburger,
 header .close {
   display: none;
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1.6rem;
+  right: 1.6rem;
   cursor: pointer;
   z-index: 100;
 }
@@ -321,15 +321,8 @@ main #project-section {
 }
 
 main #project-section .sub-heading {
-  margin-top: 1rem;
-}
-
-main .projects {
-  display: -ms-grid;
-  display: grid;
-  gap: 1rem;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 4rem 0 2rem;
+  font-size: 1.5rem;
 }
 
 main .project {
@@ -400,6 +393,49 @@ main .project .overlay {
   transition: opacity 0.4s;
   z-index: 1;
   pointer-events: none;
+}
+
+main .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+main .wrapper .project {
+  width: 100%;
+}
+
+main .wrapper .description {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 2rem;
+}
+
+main .wrapper .description li {
+  list-style: disc;
+}
+
+main .projects {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 main form {
@@ -485,6 +521,25 @@ main form > *:active, main form > *:focus {
   main .project:focus .link-section,
   main .project:active .active-section {
     opacity: 1;
+  }
+  main .wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  main .wrapper .project {
+    width: auto;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  main .wrapper .description {
+    width: 40%;
+    border-bottom: none;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -28,6 +28,12 @@ const dataText = ["Hi.", "Ich bin Pascal", "Frontend-Entwickler.", "Motiviert"];
 
 const projectData = [
   {
+    img: "images/project3.jpg",
+    previewURL: "https://festive-haibt-a6c222.netlify.app",
+    codeURL:
+      "https://github.com/wertzuk/Frontend-Mentor/tree/master/loopstudios-landing-page-main",
+  },
+  {
     img: "images/project1.jpg",
     previewURL: "https://quizzical-engelbart-80e3fb.netlify.app",
     codeURL:
@@ -44,12 +50,6 @@ const projectData = [
     previewURL: "https://pedantic-kowalevski-adc239.netlify.app",
     codeURL:
       "https://github.com/wertzuk/Frontend-Mentor/tree/master/social-media-dashboard-with-theme-switcher-master",
-  },
-  {
-    img: "images/project3.jpg",
-    previewURL: "https://festive-haibt-a6c222.netlify.app",
-    codeURL:
-      "https://github.com/wertzuk/Frontend-Mentor/tree/master/loopstudios-landing-page-main",
   },
   {
     img: "images/project5.jpg",
@@ -101,20 +101,23 @@ const projectData = [
   },
 ];
 
+const ownProjects = [
+  {
+    img: "images/schwalbennest.PNG",
+    previewURL: "http://www.schwalbennest-reil.de",
+    codeURL: "https://github.com/wertzuk/schwalbennest",
+  },
+  {
+    img: "images/study1.PNG",
+    img2: "images/study2.PNG",
+    previewURL: "",
+    codeURL: "",
+  },
+];
+
 const app = new Vue({
   el: "#app",
   data: {
     message: "Hello Vue!",
-  },
-  methods: {
-    showPreviewButton(index) {
-      if (mq.matches) {
-        const link = this.$refs[index][0];
-        link.style.opacity = 1;
-        // this.$refs[index].$el.style.opacity = "1";
-        // $ref.style.opacity = 1;
-        // link.style.opacity = 1;
-      }
-    },
   },
 });
