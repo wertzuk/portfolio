@@ -34,7 +34,7 @@ function handleClasses() {
 // Animation
 //
 const dataText = [
-  "Herzlich Willkommen.",
+  "Herzlich Willkommen",
   "Auf meiner persönlichen Website.",
   "Viel Spaß.",
 ];
