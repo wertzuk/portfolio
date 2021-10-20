@@ -12,6 +12,15 @@ listItems.forEach((item) => {
   });
 });
 
+mq.addEventListener("change", () => {
+  if (!mq.matches) {
+    menu.classList.remove("active");
+    hamburger.classList.add("active");
+    document.body.classList.remove("no-scroll");
+    closeIcon.classList.remove("active");
+  }
+});
+
 function handleClasses() {
   console.log();
   hamburger.classList.toggle("active");
@@ -24,7 +33,41 @@ function handleClasses() {
 //
 // Animation
 //
-const dataText = ["Hi.", "Ich bin Pascal", "Frontend-Entwickler.", "Motiviert"];
+const dataText = [
+  "Herzlich Willkommen.",
+  "Auf meiner persönlichen Website.",
+  "Viel Spaß.",
+];
+
+function typeWriter(text, i, fnCallback) {
+  if (i < text.length) {
+    document.querySelector(".right h1").innerHTML =
+      text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+    setTimeout(() => {
+      typeWriter(text, i + 1, fnCallback);
+    }, 100);
+  } else if (typeof fnCallback == "function") {
+    setTimeout(fnCallback, 700);
+  }
+}
+function StartTextAnimation(i) {
+  if (typeof dataText[i] == "undefined") {
+    setTimeout(() => {
+      StartTextAnimation(0);
+    }, 20000);
+  }
+  if (i < dataText[i].length) {
+    typeWriter(dataText[i], 0, () => {
+      StartTextAnimation(i + 1);
+    });
+  }
+}
+StartTextAnimation(0);
+
+//
+// Projekte
+//
 
 const projectData = [
   {
