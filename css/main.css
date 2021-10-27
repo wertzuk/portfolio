@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Antonio:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 *,
@@ -80,30 +80,34 @@ h1 {
 }
 
 .right {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 3rem;
+  text-align: center;
+  padding-top: 2rem;
 }
 
-.right h1 {
-  display: none;
-  font-size: 4rem;
-  line-height: 1.5;
-  color: white;
-  text-transform: uppercase;
+.right .quote-container {
+  min-height: 250px;
 }
 
-.right span {
-  border-right: 0.05em solid;
-  -webkit-animation: caret 1s steps(1) infinite;
-          animation: caret 1s steps(1) infinite;
+.right q {
+  display: block;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1rem;
 }
 
 header {
@@ -129,15 +133,15 @@ header nav li::after {
   left: 0;
   right: 0;
   width: 80%;
-  height: 1px;
+  height: 2px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.8);
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.2s ease-in;
-  transition: -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 header nav li:hover::after {
@@ -216,12 +220,6 @@ main section .left {
   width: 100%;
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
-}
-
-main section .right {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
-  width: 40%;
 }
 
 main section + section {
@@ -531,6 +529,11 @@ main form > *:active, main form > *:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  main section .right {
+    width: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
   }
   main .projects {
     display: -ms-grid;

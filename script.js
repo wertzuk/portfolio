@@ -31,39 +31,21 @@ function handleClasses() {
 }
 
 //
-// Animation
+// API-Section
 //
-const dataText = [
-  "Herzlich Willkommen",
-  "Auf meiner persönlichen Website.",
-  "Viel Spaß.",
-];
+const quoteBtn = document.querySelector(".btn-quote");
+const quote = document.querySelector("q");
+const person = document.querySelector(".person");
+quoteBtn.addEventListener("click", getQuote);
 
-function typeWriter(text, i, fnCallback) {
-  if (i < text.length) {
-    document.querySelector(".right h1").innerHTML =
-      text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-
-    setTimeout(() => {
-      typeWriter(text, i + 1, fnCallback);
-    }, 100);
-  } else if (typeof fnCallback == "function") {
-    setTimeout(fnCallback, 700);
-  }
+async function getQuote() {
+  const URL =
+    "https://api.quotable.io/random?minLength=10&maxLength=80&tags=technology";
+  const response = await fetch(URL);
+  const { content, author } = await response.json();
+  quote.textContent = content;
+  person.textContent = author;
 }
-function StartTextAnimation(i) {
-  if (typeof dataText[i] == "undefined") {
-    setTimeout(() => {
-      StartTextAnimation(0);
-    }, 20000);
-  }
-  if (i < dataText[i].length) {
-    typeWriter(dataText[i], 0, () => {
-      StartTextAnimation(i + 1);
-    });
-  }
-}
-StartTextAnimation(0);
 
 //
 // Projekte
