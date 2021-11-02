@@ -7,6 +7,7 @@
     <!-- <base target="_blank" /> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="script.js" defer></script>
+    <script src="button.js" defer></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Portfolio</title>
   </head>
@@ -45,8 +46,9 @@
             >
             <span class="person">John Brunner</span>
           </div>
-          <button class="btn btn-quote">Nächstes Zitat</button>
+          <!-- <button class="btn btn-quote">Nächstes Zitat</button> -->
           <a class="btn" href="#project-section">Meine Projekte</a>
+          <!-- <a class="btn-special" href="#" data-title="Awesome Button"></a> -->
         </div>
       </section>
       <section id="about">
@@ -151,13 +153,19 @@
                 :key="project.codeURL"
               >
                 <img :src="project.img" alt="image" />
-                <a class="link" target="_blank" :href="project.previewURL"
+                <a
+                  class="link link-preview"
+                  target="_blank"
+                  :href="project.previewURL"
                   >Preview</a
                 >
-                <!-- <a class="link" target="_blank" :href="project.codeURL"
-                    >Source Code</a
-                  > -->
-                <!-- </div> -->
+                <a
+                  class="link link-code"
+                  target="_blank"
+                  :href="project.codeURL"
+                  >Code</a
+                >
+
                 <div class="overlay"></div>
               </div>
             </div>
@@ -170,7 +178,7 @@
                 <div class="project project-own">
                   <img src="images/schwalbennest.PNG" alt="image" />
                   <a
-                    class="link"
+                    class="link link-preview"
                     target="_blank"
                     href="http://www.schwalbennest-reil.de"
                     >Preview</a
@@ -190,7 +198,7 @@
                 <div class="project">
                   <img src="images/study1.PNG" alt="image" />
                   <a
-                    class="link"
+                    class="link link-preview"
                     target="_blank"
                     href="https://mystifying-nobel-032558.netlify.app"
                     >Preview</a
@@ -209,12 +217,7 @@
               <div class="wrapper">
                 <div class="project">
                   <img src="images/rdf.PNG" alt="image" />
-                  <a
-                    class="link"
-                    target="_blank"
-                    href="https://mystifying-nobel-032558.netlify.app"
-                    >Preview</a
-                  >
+                  <!-- <a class="link" target="_blank" href="#">Preview</a> -->
                   <div class="overlay"></div>
                 </div>
                 <div class="description">
@@ -245,6 +248,7 @@
               placeholder="Nachricht"
             ></textarea>
           </form>
+          <button class="btn btn-send">Senden</button>
         </div>
       </section>
     </main>

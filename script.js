@@ -33,19 +33,19 @@ function handleClasses() {
 //
 // API-Section
 //
-const quoteBtn = document.querySelector(".btn-quote");
-const quote = document.querySelector("q");
-const person = document.querySelector(".person");
-quoteBtn.addEventListener("click", getQuote);
+// const quoteBtn = document.querySelector(".btn-quote");
+// const quote = document.querySelector("q");
+// const person = document.querySelector(".person");
+// quoteBtn.addEventListener("click", getQuote);
 
-async function getQuote() {
-  const URL =
-    "https://api.quotable.io/random?minLength=10&maxLength=80&tags=technology";
-  const response = await fetch(URL);
-  const { content, author } = await response.json();
-  quote.textContent = content;
-  person.textContent = author;
-}
+// async function getQuote() {
+//   const URL =
+//     "https://api.quotable.io/random?minLength=10&maxLength=80&tags=technology";
+//   const response = await fetch(URL);
+//   const { content, author } = await response.json();
+//   quote.textContent = content;
+//   person.textContent = author;
+// }
 
 //
 // Projekte

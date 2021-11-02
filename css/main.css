@@ -115,6 +115,64 @@ h1 {
   display: none;
 }
 
+.btn-special {
+  position: relative;
+  display: inline-block;
+  padding: 1.2em 2em;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(800px);
+          transform: perspective(800px);
+}
+
+.btn-special::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 4px;
+  -webkit-transition: -webkit-box-shadow 0.5s ease, -webkit-transform 0.2s ease;
+  transition: -webkit-box-shadow 0.5s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.5s ease, transform 0.2s ease;
+  transition: box-shadow 0.5s ease, transform 0.2s ease, -webkit-box-shadow 0.5s ease, -webkit-transform 0.2s ease;
+  will-change: transform;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+          transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+}
+
+.btn-special:hover::before {
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-special::after {
+  position: relative;
+  display: inline-block;
+  content: attr(data-title);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  will-change: transform;
+  -webkit-transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
+          transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
+}
+
 header {
   padding: 1rem;
 }
@@ -278,7 +336,7 @@ main .btn {
   border: 1px solid white;
   background: transparent;
   color: white;
-  padding: 0.5em 1.5em;
+  padding: 0.8em 2em;
   font-size: 18px;
   font-weight: lighter;
   cursor: pointer;
@@ -384,6 +442,21 @@ main .project img {
 
 main .project .link {
   position: absolute;
+  color: white;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  opacity: 0.9;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+main .project .link:hover {
+  pointer-events: all;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+main .project .link-preview {
   bottom: 0;
   left: 0;
   top: 50%;
@@ -391,9 +464,8 @@ main .project .link {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100px;
-  height: 100px;
-  z-index: 10;
   font-weight: bolder;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,17 +478,15 @@ main .project .link {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   text-align: center;
-  text-transform: uppercase;
-  color: white;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  opacity: 0.9;
-  cursor: pointer;
 }
 
-main .project .link:hover {
-  pointer-events: all;
-  background: rgba(0, 0, 0, 0.9);
+main .project .link-code {
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5em;
+  border-top-left-radius: inherit;
+  display: none;
 }
 
 main .project .overlay {
@@ -495,6 +565,10 @@ main form > *:active, main form > *:focus {
   border-color: turquoise;
 }
 
+main .btn-send {
+  margin-top: 2rem;
+}
+
 .self-img {
   max-width: 300px;
   width: 90%;
@@ -549,6 +623,9 @@ main form > *:active, main form > *:focus {
   main .project .link {
     opacity: 0;
   }
+  main .project .link-code {
+    display: block;
+  }
   main .project:hover img {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
@@ -584,18 +661,6 @@ main form > *:active, main form > *:focus {
   main .wrapper .description {
     width: 40%;
     border-bottom: none;
-  }
-}
-
-@-webkit-keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
   }
 }
 /*# sourceMappingURL=main.css.map */
